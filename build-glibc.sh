@@ -17,7 +17,7 @@ echo "libc_cv_ssp_strong=no" >> config.cache
 BUILD_CC="gcc" CC="${BUILD_DIR_TARGET}-gcc" \
 AR="${BUILD_DIR_TARGET}-ar" \
 RANLIB="${BUILD_DIR_TARGET}-ranlib" CFLAGS="-O2" \
-../glibc-2.27/configure --prefix=/usr \
+../configure --prefix=/usr \
 --host=${BUILD_DIR_TARGET} --build=${BUILD_DIR_HOST} \
 --disable-profile --enable-add-ons --with-tls \
 --enable-kernel=2.6.32 --with-__thread \

@@ -17,12 +17,12 @@ mkdir gcc-static
 cd gcc-static
 
 AR=ar LDFLAGS="-Wl,-rpath,${BUILD_DIR}/cross-tools/lib" \
-../gcc-7.3.0/configure --prefix=${BUILD_DIR}/cross-tools \
+../configure --prefix=${BUILD_DIR}/cross-tools \
 --build=${BUILD_DIR_HOST} --host=${BUILD_DIR_HOST} \
 --target=${BUILD_DIR_TARGET} \
 --with-sysroot=${BUILD_DIR}/target --disable-nls \
 --disable-shared \
---with-mpfr-include=$(pwd)/../gcc-7.3.0/mpfr/src \
+--with-mpfr-include=$(pwd)/../mpfr/src \
 --with-mpfr-lib=$(pwd)/mpfr/src/.libs \
 --without-headers --with-newlib --disable-decimal-float \
 --disable-libgomp --disable-libmudflap --disable-libssp \

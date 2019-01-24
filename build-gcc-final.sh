@@ -8,13 +8,13 @@ mkdir gcc-build
 cd gcc-build
 
 AR=ar LDFLAGS="-Wl,-rpath,${BUILD_DIR}/cross-tools/lib" \
-../gcc-7.3.0/configure --prefix=${BUILD_DIR}/cross-tools \
+../configure --prefix=${BUILD_DIR}/cross-tools \
 --build=${BUILD_DIR_HOST} --target=${BUILD_DIR_TARGET} \
 --host=${BUILD_DIR_HOST} --with-sysroot=${BUILD_DIR} \
 --disable-nls --enable-shared \
 --enable-languages=c,c++ --enable-c99 \
 --enable-long-long \
---with-mpfr-include=$(pwd)/../gcc-7.3.0/mpfr/src \
+--with-mpfr-include=$(pwd)/../mpfr/src \
 --with-mpfr-lib=$(pwd)/mpfr/src/.libs \
 --disable-multilib --with-arch=${BUILD_DIR_CPU}
 make && make install
