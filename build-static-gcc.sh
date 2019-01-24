@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "Uncompressing gcc"
 
-tar -xvf ${SOURCE_DIR}/gcc-7.3.0.tar.xz
 CURRENT_DIR=$(pwd)
+cd ${SOURCE_DIR}
+tar -xvf ${SOURCE_DIR}/gcc-7.3.0.tar.xz
 cd ${SOURCE_DIR}/gcc-7.3.0
 
 tar xjf ../gmp-6.1.2.tar.bz2

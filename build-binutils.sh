@@ -1,7 +1,8 @@
 #!/bin/bash
 echo "Uncompressing binutils"
-tar -xvf ${SOURCE_DIR}/binutils-2.30.tar.xz
 CURRENT_DIR=$(pwd)
+cd ${SOURCE_DIR}
+tar -xvf ${SOURCE_DIR}/binutils-2.30.tar.xz
 cd ${SOURCE_DIR}/binutils-2.30
 mkdir binutils-build
 cd binutils-build

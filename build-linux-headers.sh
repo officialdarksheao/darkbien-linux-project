@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "Uncompressing linux 4.16.3"
 
-tar -xvf ${SOURCE_DIR}/linux-4.16.3.tar.gz
 CURRENT_DIR=$(pwd)
+cd ${SOURCE_DIR}
+tar -xvf ${SOURCE_DIR}/linux-4.16.3.tar.gz
 cd ${SOURCE_DIR}/linux-4.16.3
 
 make mrproper

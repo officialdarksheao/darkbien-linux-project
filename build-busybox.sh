@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "Uncompressing Busybox"
 
-tar -xvf ${SOURCE_DIR}/busybox-1.28.3.tar.bz2
 CURRENT_DIR=$(pwd)
+cd ${SOURCE_DIR}
+tar -xvf ${SOURCE_DIR}/busybox-1.28.3.tar.bz2
 cd ${SOURCE_DIR}/busybox-1.28.3
 
 make CROSS_COMPILE="${BUILD_DIR_TARGET}-" defconfig

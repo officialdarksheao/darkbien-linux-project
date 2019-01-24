@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "Uncompressing Glibc"
 
-tar -xvf ${SOURCE_DIR}/glibc-2.27.tar.xz
 CURRENT_DIR=$(pwd)
+cd ${SOURCE_DIR}
+tar -xvf ${SOURCE_DIR}/glibc-2.27.tar.xz
 cd ${SOURCE_DIR}/glibc-2.27
 
 mkdir glibc-build

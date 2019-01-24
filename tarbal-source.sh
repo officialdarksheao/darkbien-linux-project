@@ -2,24 +2,24 @@
 echo "Compressing entire build for archival and installation"
 CURRENT_DIR=$(pwd)
 cp -rf ${BUILD_DIR}/ ${BUILD_DIR}-copy
-rm -rfv ${LJOS}-copy/cross-tools
-rm -rfv ${LJOS}-copy/usr/src/*
+rm -rfv ${BUILD_DIR}-copy/cross-tools
+rm -rfv ${BUILD_DIR}-copy/usr/src/*
 
-FILES="$(ls ${LJOS}-copy/usr/lib64/*.a)"
+FILES="$(ls ${BUILD_DIR}-copy/usr/lib64/*.a)"
 for file in $FILES; do
   rm -f $file
 done
 
-find ${LJOS}-copy/{,usr/}{bin,lib,sbin} -type f -exec sudo strip --strip-debug '{}' ';'
-find ${LJOS}-copy/{,usr/}lib64 -type f -exec sudo strip --strip-debug '{}' ';'
+find ${BUILD_DIR}-copy/{,usr/}{bin,lib,sbin} -type f -exec sudo strip --strip-debug '{}' ';'
+find ${BUILD_DIR}-copy/{,usr/}lib64 -type f -exec sudo strip --strip-debug '{}' ';'
 
-sudo chown -R root:root ${LJOS}-copy
-sudo chgrp 13 ${LJOS}-copy/var/run/utmp ${LJOS}-copy/var/log/lastlog
-sudo mknod -m 0666 ${LJOS}-copy/dev/null c 1 3
-sudo mknod -m 0600 ${LJOS}-copy/dev/console c 5 1
-sudo chmod 4755 ${LJOS}-copy/bin/busybox
+sudo chown -R root:root ${BUILD_DIR}-copy
+sudo chgrp 13 ${BUILD_DIR}-copy/var/run/utmp ${BUILD_DIR}-copy/var/log/lastlog
+sudo mknod -m 0666 ${BUILD_DIR}-copy/dev/null c 1 3
+sudo mknod -m 0600 ${BUILD_DIR}-copy/dev/console c 5 1
+sudo chmod 4755 ${BUILD_DIR}-copy/bin/busybox
 
-cd {LJOS}-copy/
+cd {BUILD_DIR}-copy/
 sudo tar cfJ ../darkbien-minimal-build-24January2019.tar.xz *
 DARKBIEN_TAR_DIR=$(pwd)
 

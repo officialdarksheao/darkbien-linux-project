@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "Setting up bootscripts"
 
-tar -xvf ${SOURCE_DIR}/clfs-embedded-bootscripts-1.0-pre3.tar.bz2
 CURRENT_DIR=$(pwd)
+cd ${SOURCE_DIR}
+tar -xvf ${SOURCE_DIR}/clfs-embedded-bootscripts-1.0-pre3.tar.bz2
 cd ${SOURCE_DIR}/clfs-embedded-bootscripts-1.0-pre3
 
 make DESTDIR=${BUILD_DIR}/ install-bootscripts

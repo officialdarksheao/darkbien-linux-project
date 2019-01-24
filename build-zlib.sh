@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "Setting up Zlib"
 
-tar -xvf ${SOURCE_DIR}/zlib-1.2.11.tar.gz
 CURRENT_DIR=$(pwd)
+cd ${SOURCE_DIR}
+tar -xvf ${SOURCE_DIR}/zlib-1.2.11.tar.gz
 cd ${SOURCE_DIR}/zlib-1.2.11
 
 sed -i 's/-O3/-Os/g' configure
