@@ -1,6 +1,6 @@
 https://ftp.gnu.org/gnu/binutils/binutils-2.30.tar.xz
 https://busybox.net/downloads/busybox-1.28.3.tar.bz2
-http://cross-lfs.org/files/packages/embedded-0.0.1/clfs-embedded-bootscripts-1.0-pre3.tar.bz2
+http://ftp.clfs.org/pub/clfs/conglomeration/clfs-embedded-bootscripts/clfs-embedded-bootscripts-1.0-pre5.tar.bz2
 https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.xz
 https://ftp.gnu.org/gnu/glibc/glibc-2.27.tar.xz
 https://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.bz2
