@@ -19,7 +19,7 @@ sudo mknod -m 0666 ${BUILD_DIR}-copy/dev/null c 1 3
 sudo mknod -m 0600 ${BUILD_DIR}-copy/dev/console c 5 1
 sudo chmod 4755 ${BUILD_DIR}-copy/bin/busybox
 
-cd {BUILD_DIR}-copy/
+cd ${BUILD_DIR}-copy/
 sudo tar cfJ ../darkbien-minimal-build-24January2019.tar.xz *
 DARKBIEN_TAR_DIR=$(pwd)
 
