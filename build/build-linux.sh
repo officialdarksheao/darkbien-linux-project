@@ -60,4 +60,4 @@ ${BUILD_DIR}/cross-tools/bin/depmod.pl \
 -b ${BUILD_DIR}/lib/modules/4.16.3
 
 cd ${CURRENT_DIR}
-echo "Busybox installed, Next: source build-bootscripts.sh"
+echo "Kernel installed, Next: source build-bootscripts.sh"

@@ -27,6 +27,6 @@ cd ${CURRENT_DIR}
 echo "Compressed, Next: mount a drive you want to install on with a fresh ext4 filesystem"
 echo "  cd to it"
 echo "  export NEW_ROOT_DIR=\$(pwd)"
-echo "  and sudo tar xJF \${DARKBIEN_TAR_DIR}/darkbien-minimal-build-24January2019.tar.xz"
+echo "  and sudo tar xf \${DARKBIEN_TAR_DIR}/darkbien-minimal-build-24January2019.tar.xz"
 echo "  from there, grub-install --root-directory=\${NEW_ROOT_DIR} /dev/{thing you mounted}"
 echo "  reboot, loading from that device, and use passwd to set root's password."
