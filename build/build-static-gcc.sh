@@ -3,8 +3,8 @@ echo "Uncompressing gcc"
 
 CURRENT_DIR=$(pwd)
 cd ${SOURCE_DIR}
-tar -xvf ${SOURCE_DIR}/gcc-7.3.0.tar.xz
-cd ${SOURCE_DIR}/gcc-7.3.0
+tar -xvf ${SOURCE_DIR}/gcc-8.2.0.tar.gz
+cd ${SOURCE_DIR}/gcc-8.2.0
 
 tar xjf ../gmp-6.1.2.tar.bz2
 mv gmp-6.1.2 gmp

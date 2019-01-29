@@ -2,7 +2,7 @@
 echo "Finializing gcc"
 
 CURRENT_DIR=$(pwd)
-cd ${SOURCE_DIR}/gcc-7.3.0
+cd ${SOURCE_DIR}/gcc-8.2.0
 
 mkdir gcc-build
 cd gcc-build
