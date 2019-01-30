@@ -3,8 +3,8 @@ echo "Uncompressing Glibc"
 
 CURRENT_DIR=$(pwd)
 cd ${SOURCE_DIR}
-tar -xvf ${SOURCE_DIR}/glibc-2.27.tar.xz
-cd ${SOURCE_DIR}/glibc-2.27
+tar -xvf ${SOURCE_DIR}/glibc-2.28.tar.gz
+cd ${SOURCE_DIR}/glibc-2.28
 
 mkdir glibc-build
 cd glibc-build
@@ -20,7 +20,7 @@ RANLIB="${BUILD_DIR_TARGET}-ranlib" CFLAGS="-O2" \
 ../configure --prefix=/usr \
 --host=${BUILD_DIR_TARGET} --build=${BUILD_DIR_HOST} \
 --disable-profile --enable-add-ons --with-tls \
---enable-kernel=2.6.32 --with-__thread \
+--enable-kernel=4.20.5 --with-__thread \
 --with-binutils=${BUILD_DIR}/cross-tools/bin \
 --with-headers=${BUILD_DIR}/usr/include \
 --cache-file=config.cache

@@ -200,7 +200,7 @@ set timeout=5
 set root=(hd0,1)
 
 menuentry "Darkbein Minimal OS 0.1a" {
-        linux   /boot/vmlinuz-4.16.3 root=/dev/sda1 ro quiet
+        linux   /boot/vmlinuz-4.20.5 root=/dev/sda1 ro quiet
 }
 EOF
 
@@ -217,6 +217,8 @@ export BUILD_DIR_TARGET=x86_64-unknown-linux-gnu
 export BUILD_DIR_CPU=k8
 export BUILD_DIR_ARCH=$(echo ${BUILD_DIR_TARGET} | sed -e 's/-.*//' -e 's/i.86/i386/')
 export BUILD_DIR_ENDIAN=little
+
+ln -sv /bin/sh 
 
 echo "Final setup of environment needed for cross-compiling done"
 

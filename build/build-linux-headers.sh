@@ -1,10 +1,10 @@
 #!/bin/bash
-echo "Uncompressing linux 4.16.3"
+echo "Uncompressing linux 4.20.5"
 
 CURRENT_DIR=$(pwd)
 cd ${SOURCE_DIR}
-tar -xvf ${SOURCE_DIR}/linux-4.16.3.tar.gz
-cd ${SOURCE_DIR}/linux-4.16.3
+tar -xvf ${SOURCE_DIR}/linux-4.20.5.tar.gz
+cd ${SOURCE_DIR}/linux-4.20.5
 
 make mrproper
 make ARCH=${BUILD_DIR_ARCH} headers_check && make ARCH=${BUILD_DIR_ARCH} INSTALL_HDR_PATH=dest headers_install
