@@ -38,7 +38,7 @@ export BUILD_DIR SOURCE_DIR PATH LC_ALL
 
 echo "Environment variables ready"
 
-mkdir -pv ${BUILD_DIR}/{bin,boot{,grub},dev,{etc/,}opt,home,lib/{firmware,modules},lib64,mnt}
+mkdir -pv ${BUILD_DIR}/{bin,boot{,grub},bootconfig{,grub},dev,{etc/,}opt,home,lib/{firmware,modules},lib64,mnt}
 mkdir -pv ${BUILD_DIR}/{proc,media/{floppy,cdrom},sbin,srv,sys}
 mkdir -pv ${BUILD_DIR}/var/{lock,log,mail,run,spool}
 mkdir -pv ${BUILD_DIR}/var/{opt,cache,lib/{misc,locate},local}
@@ -192,12 +192,12 @@ usbdev[0-9].[0-9]       root:root 0660 */lib/mdev/usbdev
 usbdev[0-9].[0-9]_.*    root:root 0660
 EOF
 
-cat > ${BUILD_DIR}/boot/grub/grub.cfg<< "EOF"
+cat > ${BUILD_DIR}/bootconfig/grub/grub.cfg<< "EOF"
 
 set default=0
 set timeout=5
 
-set root=(hd0,1)
+set root=(hd0,gpt1)
 
 menuentry "Darkbein Minimal OS 0.1a" {
         linux   /boot/vmlinuz-4.20.5 root=/dev/sda1 ro quiet

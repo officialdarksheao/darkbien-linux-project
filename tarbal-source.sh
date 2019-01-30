@@ -20,13 +20,16 @@ sudo mknod -m 0600 ${BUILD_DIR}-copy/dev/console c 5 1
 sudo chmod 4755 ${BUILD_DIR}-copy/bin/busybox
 
 cd ${BUILD_DIR}-copy/
-sudo tar cfJ ../darkbien-minimal-build-24January2019.tar.xz *
+sudo tar cfJ ../darkbien-minimal-build-30January2019.tar.xz *
 DARKBIEN_TAR_DIR=$(pwd)
 
 cd ${CURRENT_DIR}
-echo "Compressed, Next: mount a drive you want to install on with a fresh ext4 filesystem"
+echo "Compressed, Next: use fdisk or cfdisk to create a gpt partion"
+echo "  mount a drive you want to install on with a fresh ext4 filesystem"
+echo "  mkfs.ext4 that drive, then use fdisk to set the drive to be bootable"
 echo "  cd to it"
 echo "  export NEW_ROOT_DIR=\$(pwd)"
-echo "  and sudo tar xf \${DARKBIEN_TAR_DIR}/darkbien-minimal-build-24January2019.tar.xz"
+echo "  and sudo tar xf \${DARKBIEN_TAR_DIR}/darkbien-minimal-build-30January2019.tar.xz"
 echo "  from there, grub-install --root-directory=\${NEW_ROOT_DIR} /dev/{thing you mounted}"
+echo "  cp \${NEW_ROOT_DIR}/bootconfig/grub/* \${NEW_ROOT_DIR}/boot/grub/. "
 echo "  reboot, loading from that device, and use passwd to set root's password."

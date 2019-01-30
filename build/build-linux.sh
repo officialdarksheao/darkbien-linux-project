@@ -15,7 +15,7 @@ make ARCH=${BUILD_DIR_ARCH} \
 CROSS_COMPILE=${BUILD_DIR_TARGET}- \
 INSTALL_MOD_PATH=${BUILD_DIR} modules_install
 
-cp -v arch/x86/boot/bzImage ${BUILD_DIR}/boot/vmlinuz-4.20.5
+cp -v arch/${BUILD_DIR_ARCH}/boot/bzImage ${BUILD_DIR}/boot/vmlinuz-4.20.5
 cp -v System.map ${BUILD_DIR}/boot/System.map-4.20.5
 cp -v .config ${BUILD_DIR}/boot/config-4.20.5
 
