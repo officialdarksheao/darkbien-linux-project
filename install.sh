@@ -13,4 +13,4 @@ source build/build-linux.sh
 source build/build-bootscripts.sh
 source build/build-zlib.sh
 
-echo "System Built, Next: source tarbal-source.sh"
+source tarbal-source.sh
